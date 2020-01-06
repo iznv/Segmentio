@@ -523,6 +523,12 @@ open class Segmentio: UIView {
             let itemWidth = Segmentio.intrinsicWidth(for: segmentioItems[indexPath.row], style: segmentioStyle)
             width = dynamicWidth > collectionViewWidth ? itemWidth
                 : itemWidth + ((collectionViewWidth - dynamicWidth) / CGFloat(segmentioItems.count))
+        case .intrinsic:
+            guard !segmentioItems.isEmpty else {
+                break
+            }
+            
+            width = Segmentio.intrinsicWidth(for: segmentioItems[indexPath.row], style: segmentioStyle)
         }
         
         return width

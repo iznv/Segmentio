@@ -134,6 +134,7 @@ public struct SegmentioIndicatorOptions {
 
 public enum SegmentioPosition {
     case dynamic
+    case intrinsic
     case fixed(maxVisibleItems: Int)
 }
 
